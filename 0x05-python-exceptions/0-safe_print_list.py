@@ -1,19 +1,14 @@
 #!/usr/bin/python3
 def safe_print_list(my_list=[], x=0):
-try:
-        len = 0
-        for i in my_list:
-            len += 1
-        if x > len:
-            x = len
-        count = 0
-        i = 0
-        while (i < x):
-            print("{}".format(my_list[i]), end='')
-            count += 1
-            i += 1
-        print()
-        return count
-    except:
-        print()
-        return count
+    "
+    Write a function that prints x elements of a list.
+    "
+    printd = 0
+    for iterator in range(x):
+        try:
+            print("{:d}".format(my_list[iterator]), end="")
+            printd += 1
+        except:
+            continue
+    print()
+    return printd
