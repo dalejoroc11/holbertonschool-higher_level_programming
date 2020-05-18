@@ -1,13 +1,11 @@
 #!/usr/bin/python3
-def safe_print_integer(value):
-    counter = 0
-    for iterator in range(x):
+def safe_print_integer(_list=[], rango=0):
+    printt = 0
+    for iterator in range(rango):
         try:
-            print('{:d}'.format(my_list[iterator]), end='')
-            counter += 1
-        except (TypeError, ValueError):
+            print("{:d}".format(_list[iterator]), end="")
+            printt += 1
+        except:
             continue
-        except IndexError:
-            raise
     print()
-    return counter
+    return printt
