@@ -5,5 +5,5 @@ Write an empty class Square that defines a square:
 
 
 class Square:
-    # line into class
+    """line into class"""
     pass
