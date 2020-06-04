@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
 """
 Write a function that creates an Object from a “JSON file”:
 """

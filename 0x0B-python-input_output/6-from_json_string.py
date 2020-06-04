@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
 """
 Write a function that returns an object (Python data structure) represented
 by a JSON string
