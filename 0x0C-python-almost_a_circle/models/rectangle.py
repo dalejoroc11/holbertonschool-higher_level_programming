@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""rectangle"""
+""" --- """
 
 from models.base import Base
 
 
 class Rectangle(Base):
-    """ class rectangle """
+    """ --- """
     def __init__(self, width, height, x=0, y=0, id=None):
         self.valwh("width", width)
         self.width = width
@@ -19,79 +19,79 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """ widht """
+        """ --- """
         return self.__width
 
     @width.setter
     def width(self, val):
-        """ -whit set """
+        """ --- """
         self.valwh("width", val)
         self.__width = val
 
     @property
     def height(self):
-        """ height """
+        """ --- """
         return self.__height
 
     @height.setter
     def height(self, val):
-        """ heught set """
+        """ --- """
         self.valwh("height", val)
         self.__height = val
 
     @property
     def x(self):
-        """ x self """
+        """ --- """
         return self.__x
 
     @x.setter
     def x(self, val):
-        """ x set """
+        """ --- """
         self.valxy("x", val)
         self.__x = val
 
     @property
     def y(self):
-        """ y self """
+        """ --- """
         return self.__y
 
     @y.setter
     def y(self, val):
-        """ y set """
+        """ --- """
         self.valxy("y", val)
         self.__y = val
 
     def valxy(self, name, val):
-        """ x """
+        """ --- """
         if type(val) is not int:
             raise TypeError(name + " must be an integer")
         if val < 0:
             raise ValueError(name + " must be >= 0")
 
     def valwh(self, name, val):
-        """ val self """
+        """ --- """
         if type(val) is not int:
             raise TypeError(name + " must be an integer")
         if val <= 0:
             raise ValueError(name + " must be > 0")
 
     def area(self):
-        """ area """
+        """ --- """
         return self.__height * self.__width
 
     def display(self):
-        """ display """
+        """ --- """
         for i in range(self.__height):
             print("#"*self.__width)
 
     def __str__(self):
-        """ str """
+        """ --- """
         return "[" + __class__.__name__ + "] (" + str(self.id) + ") " + \
                str(self.__x) + "/"+str(self.__y) + " - " + \
                str(self.__width) + "/" + str(self.__height)
 
     def display(self):
-        """ dislay """
+        """ --- """
         for y in range(self.__y):
             print("")
         for i in range(self.__height):
