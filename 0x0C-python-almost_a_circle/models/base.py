@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-""" --- """
+""" base """
 
 import json
 import os
 
 
 class Base:
-    """ --- """
+    """ class base """
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -18,14 +18,14 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """ ..."""
+        """ static method"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """ ..."""
+        """ class method"""
         filename = "" + cls.__name__ + ".json"
         text = []
         with open(filename, mode='w', encoding='UTF-8') as f:
@@ -39,14 +39,14 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """ ..."""
+        """static method"""
         if json_string is None or len(json_string) <= 0:
             return []
         return list(json.loads(json_string))
 
     @classmethod
     def create(cls, **dictionary):
-        """ ..."""
+        """ class method"""
         if cls.__name__ == "Rectangle":
             aux = cls(1, 1)
         elif cls.__name__ == "Square":
@@ -56,7 +56,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """ ..."""
+        """ class method load file from"""
         h = "" + cls.__name__ + ".json"
         text = ""
         newlist = []
@@ -71,7 +71,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """ ..."""
+        """ save to file"""
         filename = "" + cls.__name__ + ".csv"
         ls = []
         with open(filename, mode='w', encoding='UTF-8') as f:
@@ -85,7 +85,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """ ..."""
+        """ load from file"""
         h = "" + cls.__name__ + ".csv"
         text = ""
         newlist = []

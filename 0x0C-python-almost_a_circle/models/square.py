@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-""" --- """
+""" square """
 
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """ --- """
+    """ square """
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
 
@@ -20,12 +20,12 @@ class Square(Rectangle):
         self.height = val
 
     def __str__(self):
-        """ --- """
+        """ string """
         return "[" + __class__.__name__ + "] (" + str(self.id) + ") " +\
                str(self.x) + "/" + str(self.y) + " - " + str(self.width)
 
     def update(self, *args, **kwargs):
-        """ --- """
+        """ update """
         if len(args) > 0:
             i = 0
             for i in range(len(args)):
@@ -51,5 +51,5 @@ class Square(Rectangle):
                     self.y = kwargs[key]
 
     def to_dictionary(self):
-        """ --- """
+        """ dictionary """
         return {"id": self.id, "size": self.width, "x": self.x, "y": self.y}
