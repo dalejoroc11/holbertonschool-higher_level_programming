@@ -1,8 +1,4 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
-"""
-Write a function that returns the JSON representation of an object (string)
-"""
 import Json
 
 
