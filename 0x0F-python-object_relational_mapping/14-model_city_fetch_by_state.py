@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # script that lists all State objects from the database hbtn_0e_6_usa
-# # Sintax: ./10-model_state_my_get.py username password database_name
+# # Sintax: ./13-model_state_delete_a.py username password database_name
 # state_name_to_search
 # Used module sqlalchemy
 
@@ -8,6 +8,7 @@ import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import State
+from model_city import City
 
 if __name__ == "__main__":
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
@@ -16,11 +17,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    found = False
-    for state in session.query(State):
-        if state.name == sys.argv[4]:
-            print("{}".format(state.id))
-            found = True
-            break
-    if found is False:
-        print("Not found")
+    for city, state in session.query(City, State) \
+                              .filter(City.state_id == State.id) \
+                              .order_by(City.id):
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
