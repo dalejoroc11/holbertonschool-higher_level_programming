@@ -1,14 +1,18 @@
 #!/usr/bin/python3
-""" 
-Takes your Github credentials (username and password)
+"""
+Script that takes your Github credentials
 """
 
 import requests
 from sys import argv
 
 if __name__ == "__main__":
-
+    url = "https://api.github.com/user"
     user = argv[1]
-    pswd = argv[2]
-    response = requests.get('https://api.github.com/user', auth=(user, pswd))
-    print(response.json().get('id'))
+    pwd = argv[2]
+
+    try:
+        r = requests.get(url, auth=(user, pwd)).json()
+        print(r["id"])
+    except:
+        print("None")
